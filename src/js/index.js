@@ -29,6 +29,12 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  if (variables.name == null) variables.name = "FirstName";
+  if (variables.lastname == null) variables.lastname = "LastName";
+  if (variables.role == null) variables.role = "Role";
+  if (variables.city == null) variables.city = "City";
+  if (variables.country == null) variables.country = "Country";
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
@@ -61,7 +67,7 @@ window.onload = function() {
     socialMediaPosition: "position-left",
     // social media usernames
     twitter: null,
-    github: "alesanchezr",
+    github: null,
     linkedin: null,
     instagram: null,
     name: null,
